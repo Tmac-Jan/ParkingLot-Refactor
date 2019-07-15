@@ -25,7 +25,7 @@ public class SmartParkingBoy extends ParkingBoy {
     @Override
     public Ticket park(Car car) throws Exception {
         if (isAllParkingLotFull()) {
-            throw new Exception("Not enough position.");
+            throw new NotEnoughPositionException("Not enough position.");
         } else {
             ParkingLot parkingLot = getParkingLots().stream()
                     .filter(e -> !(e.isCapacityFull()))

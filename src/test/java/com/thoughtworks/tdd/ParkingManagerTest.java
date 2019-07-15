@@ -50,7 +50,7 @@ public class ParkingManagerTest {
       while(1==1){
         parkingBoy.park(new Car());
       }
-    }catch (Exception ex){
+    }catch (NotEnoughPositionException ex){
       System.out.println(ex.getMessage());
       Assertions.assertEquals("Not enough position.",ex.getMessage());
     }
