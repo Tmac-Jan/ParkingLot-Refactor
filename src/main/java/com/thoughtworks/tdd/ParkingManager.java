@@ -13,20 +13,13 @@ import java.util.List;
 public class ParkingManager extends ParkingBoy {
 
   private List<ParkingBoy> parkingBoyList;
-//  private List<ParkingLot> parkingLots;
+
 
   private final Integer PARKINGLOT_COUNT = 2;
 
   public ParkingManager() {
     super();
     parkingBoyList = new ArrayList<>(0);
-//   for (int i=0;i<2;i++){
-//     parkingLots.add(new ParkingLot())
-//   }
-  }
-
-  public ParkingManager(List<ParkingBoy> parkingBoyList) {
-    this.parkingBoyList = parkingBoyList;
   }
 
   public List<ParkingBoy> getParkingBoyList() {
@@ -37,17 +30,4 @@ public class ParkingManager extends ParkingBoy {
     parkingBoyList.add(parkingBoy);
   }
 
-//  @Override
-//  public Ticket park(Car car) throws Exception {
-//    if (isAllParkingLotFull()) {
-//      throw new Exception("Not enough position.");
-//    } else {
-//      return parkingLot.Park(car);
-//    }
-//  }
-
-//  @Override
-//  public Car fetch(Ticket ticket) throws Exception {
-//    return parkingLot.fetchCar(ticket);
-//  }
 }
