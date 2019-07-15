@@ -27,13 +27,6 @@ public class SuperSmartParkingBoy extends SmartParkingBoy {
                     .filter(e -> !(e.isCapacityFull()))
                     .sorted(Comparator.comparing(ParkingLot::getParkingLotPositionRate))
                     .collect(Collectors.toList()).get(0);
-         getParkingLots().stream()
-                .filter(e -> !(e.isCapacityFull()))
-                .sorted(Comparator
-                    .comparing(ParkingLot::getParkingLotPositionRate))
-             .forEach(e->{
-                 System.out.println("size:"+e.getTicketCars().size()+"name:"+e+" rate:"+e.getParkingLotPositionRate());
-             });
             return parkingLot.Park(car);
         }
     }
