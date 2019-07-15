@@ -25,11 +25,11 @@ public class ParkingLot {
         return ticketCars;
     }
 
-    public Car fetchCar(Ticket ticket)throws Exception{
+    public Car fetchCar(Ticket ticket)throws TicketUnlawfulException{
         if (isTicketLegal(ticket)){
             return  ticketCars.remove(ticket);
         }
-       else throw new Exception("Your ticket is unlawful!");
+       else throw new TicketUnlawfulException("Your ticket is unlawful!");
     }
     public boolean isTicketLegal(Ticket ticket){
         return this.ticketCars.containsKey(ticket)?true:false;

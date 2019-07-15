@@ -66,7 +66,7 @@ public class ParkingBoy {
                         .filter(e -> e.getTicketCars().containsKey(ticket))
                         .collect(Collectors.toList()).get(0).fetchCar(ticket);
             } else
-                throw new Exception("Your ticket is unlawful!");
+                throw new TicketUnlawfulException("Your ticket is unlawful!");
         }
     }
 
