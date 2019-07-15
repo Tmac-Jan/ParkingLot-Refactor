@@ -35,7 +35,7 @@ class ParkingBoyTest {
         ParkingBoy parkingBoy = new ParkingBoy();
         Ticket wrongTicket = new Ticket();
         parkingBoy.park(car);
-        Assertions.assertThrows(TicketUnlawfulException.class,()->{
+        Assertions.assertThrows(UnlawfulTicketException.class,()->{
             parkingBoy.fetch(wrongTicket);
         });
     }
@@ -44,7 +44,7 @@ class ParkingBoyTest {
         ParkingBoy parkingBoy = new ParkingBoy();
         Ticket actualTicket = parkingBoy.park(car);//Not Used
         parkingBoy.fetch(actualTicket);
-        Assertions.assertThrows(TicketUnlawfulException.class,()->{
+        Assertions.assertThrows(UnlawfulTicketException.class,()->{
             parkingBoy.fetch(actualTicket);
         });
     }
@@ -78,7 +78,7 @@ class ParkingBoyTest {
         Ticket wrongTicket = new Ticket();
             try {
                 parkingBoy.fetch(wrongTicket);
-            }catch (TicketUnlawfulException ex){
+            }catch (UnlawfulTicketException ex){
                 System.out.println(ex.getMessage());
                 Assertions.assertEquals("Your ticket is unlawful!",ex.getMessage());
             } catch (Exception e) {
@@ -93,7 +93,7 @@ class ParkingBoyTest {
         parkingBoy.fetch(ticket);
         try {
             parkingBoy.fetch(ticket);
-        }catch (TicketUnlawfulException ex){
+        }catch (UnlawfulTicketException ex){
             System.out.println(ex.getMessage());
             Assertions.assertEquals("Your ticket is unlawful!",ex.getMessage());
         }
