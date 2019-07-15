@@ -27,12 +27,16 @@ public class SmartParkingBoy extends ParkingBoy {
         if (isAllParkingLotFull()) {
             throw new NotEnoughPositionException("Not enough position.");
         } else {
-            ParkingLot parkingLot = getParkingLots().stream()
-                    .filter(e -> !(e.isCapacityFull()))
-                    .sorted(Comparator.comparing(e->e.getTicketCars().size()))
-                    .collect(Collectors.toList()).get(0);
+            ParkingLot parkingLot = getParkingLotWithMostPosition();
             return parkingLot.Park(car);
         }
+    }
+
+    private ParkingLot getParkingLotWithMostPosition() {
+        return getParkingLots().stream()
+                          .filter(e -> !(e.isCapacityFull()))
+                          .sorted(Comparator.comparing(e->e.getTicketCars().size()))
+                          .collect(Collectors.toList()).get(0);
     }
 
 
