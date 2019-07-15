@@ -59,7 +59,7 @@ public class ParkingBoy {
 
     public Car fetch(Ticket ticket) throws Exception {
         if (ticket == null) {
-            throw new Exception("Please provide your parking ticket.");
+            throw new NULLTicketException("Please provide your parking ticket.");
         } else {
             if (isTicketInAnyOneParkingLot(ticket)) {
                 return parkingLots.stream()

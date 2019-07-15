@@ -33,7 +33,7 @@ public class ParkingManagerTest {
     ParkingBoy parkingBoy =parkingManager.getParkingBoyList().get(0);
     try {
       parkingBoy.fetch(null);
-    }catch (Exception ex){
+    }catch (NULLTicketException ex){
       System.out.println(ex.getMessage());
       Assertions.assertEquals("Please provide your parking ticket.",ex.getMessage());
     }
