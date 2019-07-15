@@ -18,7 +18,7 @@ public class ParkingManagerTest {
     parkingBoy.fetch(ticket);
     try {
       parkingBoy.fetch(ticket);
-    }catch (Exception ex){
+    }catch (NULLTicketException ex){
       System.out.println(ex.getMessage());
       Assertions.assertEquals("Your ticket is unlawful!",ex.getMessage());
     }
